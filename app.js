@@ -10,42 +10,42 @@ hbs.registerPartials( __dirname + '/views/partials');
 //Servir contenido estatico 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.render('home',{
-        nombre:'Eliezer Rincon',
-        titulo: 'Curso Node'
-    });
-});
+// app.get('/', (req, res) => {
+//     res.render('home',{
+//         nombre:'Eliezer Rincon',
+//         titulo: 'Curso Node'
+//     });
+// });
 
-app.get('/generic', (req, res) => {
-    res.render('generic',{
-        nombre:'Eliezer Rincon',
-        titulo: 'Curso Node'
-    });
-});
+// app.get('/generic', (req, res) => {
+//     res.render('generic',{
+//         nombre:'Eliezer Rincon',
+//         titulo: 'Curso Node'
+//     });
+// });
 
-app.get('/elements', (req, res) => {
-    res.render('elements',{
-        nombre:'Eliezer Rincon',
-        titulo: 'Curso Node'
-    });
-});
+// app.get('/elements', (req, res) => {
+//     res.render('elements',{
+//         nombre:'Eliezer Rincon',
+//         titulo: 'Curso Node'
+//     });
+// });
 
-app.get('/elements', (req, res) => {
-    res.sendFile( __dirname + '/public/elements.html');
-});
+// app.get('/elements', (req, res) => {
+//     res.sendFile( __dirname + '/public/elements.html');
+// });
 
-app.get('/home', (req, res) => { 
-    res.sendFile( __dirname + '/public/home.html');
-});
+// app.get('/home', (req, res) => { 
+//     res.sendFile( __dirname + '/public/home.html');
+// });
 
 
-app.get('/hola-mundo', (req, res) => {
-    res.send('Hello World 2');
-});
+// app.get('/hola-mundo', (req, res) => {
+//     res.send('Hello World 2');
+// });
 
 app.get('/*', (req, res) => {
-    res.send('Page Not Found');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {
